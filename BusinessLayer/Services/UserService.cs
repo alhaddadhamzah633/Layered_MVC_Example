@@ -15,12 +15,10 @@ namespace BusinessLayer.Services
     {
         private readonly IEmailService _emailService;
 
-        public UserService(IRepository<User> repo, IEmailService emailService) : base(repo)
+        public UserService(IEmailService emailService) : base(repo)
         {
             _emailService = emailService;
         }
-
-        
 
         protected override User MapToModel(UserDto userDto)
         {
