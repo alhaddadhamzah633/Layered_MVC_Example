@@ -13,9 +13,9 @@ namespace BusinessLayer.Services
 {
     public class UserService : BaseCrudService<UserDto,User>
     {
-        private readonly IEmailService _emailService;
+        private  IEmailService _emailService;
 
-        public UserService(IEmailService emailService) : base(repo)
+        public UserService( IEmailService emailService)
         {
             _emailService = emailService;
         }
