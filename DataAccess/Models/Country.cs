@@ -1,7 +1,8 @@
-namespace MVC_Example.Dtos
+namespace MVC_Example.DataAccessLayer.Models
 {
-    public class CountryDto : BaseDto
+    public class  Country : BaseEntity
     {
+       
         public string Name { get; set; }
         public string Continent { get; set; }
     }

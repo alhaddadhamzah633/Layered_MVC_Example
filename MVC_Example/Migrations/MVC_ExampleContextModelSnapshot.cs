@@ -19,7 +19,7 @@ namespace MVC_Example.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MVC_Example.Models.Category", b =>
+                 modelBuilder.Entity("MVC_Example.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -74,6 +74,30 @@ namespace MVC_Example.Migrations
 
                     b.ToTable("Product", (string)null);
                 });
+                modelBuilder.Entity("MVC_Example.Models.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Continent")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Country", (string)null);
+                });
+
 
             modelBuilder.Entity("MVC_Example.Models.User", b =>
                 {
