@@ -13,9 +13,14 @@ namespace BusinessLayer.Services
 {
     public class UserService : BaseCrudService<UserDto,User>
     {
-        public UserService(IRepository<User> repo) : base(repo)
+        private readonly IEmailService _emailService;
+
+        public UserService(IRepository<User> repo, IEmailService emailService) : base(repo)
         {
+            _emailService = emailService;
         }
+
+        
 
         protected override User MapToModel(UserDto userDto)
         {
