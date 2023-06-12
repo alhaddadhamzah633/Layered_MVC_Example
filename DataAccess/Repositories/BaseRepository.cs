@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MVC_Example.DataAccessLayer.Repositories
 {
-    public class BaseRepository< > : IRepository<TModel> where TModel : BaseEntity
+    public class BaseRepository<TModel> : IRepository<TModel> where TModel : BaseEntity
     {
         private readonly ApplicationContext context;
         DbSet<TModel> dbSet;
